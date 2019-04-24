@@ -33,9 +33,20 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
+        // validate whether username exists in database
+        boolean usernameExists = username.equals(DaoFactory.getUsersDao().findByUsername(username).getUsername());
+        if (usernameExists) {
+            response.sendRedirect("/register");
+            return;
+        }
+
         // create and save a new user
         User user = new User(username, email, password);
         DaoFactory.getUsersDao().insert(user);
         response.sendRedirect("/login");
+    }
+
+    public static void main(String[] args) {
+//        System.out.println(DaoFactory.getUsersDao().findByUsername("Dwight").getUsername());
     }
 }
