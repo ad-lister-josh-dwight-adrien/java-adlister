@@ -7,12 +7,21 @@
     </jsp:include>
 </head>
 <body>
+<% request.setAttribute("adId", request.getParameter("adId"));%>
+<c:out value="${adId}"/>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Update Your Ad, ${sessionScope.user.username}</h1>
     <c:forEach var="ad" items="${ads}">
-        <%--<c:if test="${ad.id} ">--%>
+        <c:out value="${ad.id}"/>
+        <c:if test="${ad.id == adId}">
+            <c:out value="${ad.title}"/>
             <form action="/ads/update" method="post">
+
+
+                <div class="form-group">
+                    <input id="userid" name="userid" class="form-control" type="hidden" value="<c:out value="${ad.userId}"/>">
+                </div>
                 <div class="form-group">
                     <input id="id" name="id" class="form-control" type="hidden" value="<c:out value="${ad.id}"/>">
                 </div>
@@ -27,7 +36,7 @@
                 </div>
                 <input type="submit" class="btn btn-block btn-primary">
             </form>
-        <%--</c:if>--%>
+        </c:if>
     </c:forEach>
 
     <%--<h1>Here's a List of Your Current Ads:</h1>--%>

@@ -81,6 +81,22 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad getAdById(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ? LIMIT 1");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                return extractAd(rs);
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -96,5 +112,9 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) {
+//        MySQLAdsDao test = new MySQLAdsDao();
     }
 }

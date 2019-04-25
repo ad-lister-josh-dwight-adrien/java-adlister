@@ -13,5 +13,7 @@ public interface Ads {
     void update(Ad ad);
     //delete an ad
     void delete(long id);
+    //find an ad id
+    Ad getAdById(long id);
 
 }
