@@ -24,21 +24,28 @@
                 request.setAttribute("search", request.getParameter("title"));
             %>
             <c:if test = "${search == null}">
-            <h2><c:out value = "${ad.title}"/></h2>
-            <p><c:out value = "${ad.description}"/><p>
+                <h2><c:out value = "${ad.id}"/></h2>
+                <h2><c:out value = "${ad.title}"/></h2>
+                <p><c:out value = "${ad.description}"/><p>
+
             </c:if>
             <c:if test = "${search.toString() == ''}">
-            <h2><c:out value = "${ad.title}"/></h2>
-            <p><c:out value = "${ad.description}"/><p>
+                <h2><c:out value = "${ad.title}"/></h2>
+                <p><c:out value = "${ad.description}"/><p>
             </c:if>
             <c:if test="${search.length() != 0}">
             <c:if test = "${search != null}">
             <c:if test = "${ad.title.toLowerCase().contains(search.toLowerCase())}">
-            <h2><c:out value = "${ad.title}"/></h2>
-            <p><c:out value = "${ad.description}"/><p>
+                <h2><c:out value = "${ad.title}"/></h2>
+                <p><c:out value = "${ad.description}"/><p>
             </c:if>
             </c:if>
             </c:if>
+            <c:out value="${ad.userId}"></c:out>
+            <form method="get" action="/adInfo">
+                <input id="adId" name="adId" type="hidden" placeholder="${ad.id}" value="${ad.id}">
+                <a href="/adInfo"><input type="submit" value="view ad"></a>
+            </form>
         </div>
     </c:forEach>
 </div>
