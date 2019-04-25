@@ -34,9 +34,4 @@ public class UpdateAdServlet extends HttpServlet {
 
     }
 
-    public static void main(String[] args) {
-//        System.out.println(DaoFactory.getUsersDao().findByUsername("Dwight").getUsername());
-//        System.out.println(DaoFactory.getAdsDao().);
-
-    }
 }
