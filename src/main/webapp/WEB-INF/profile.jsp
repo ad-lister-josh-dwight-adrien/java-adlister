@@ -17,8 +17,11 @@
 
         <c:if test="${ad.userId == sessionScope.user.id}">
             <div class="col-md-6">
+                <h2>${ad.id}</h2>
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
+                <button><a href="/ads/update">Edit</a></button>
+                <button><a href="/ads/delete">Delete</a></button>
             </div>
         </c:if>
     </c:forEach>
