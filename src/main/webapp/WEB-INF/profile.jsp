@@ -19,13 +19,13 @@
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
-                <form method="get" action="/ads/delete">
-                    <input name="idAd" id="idAd" type="hidden" placeholder="${ad.id}" value="${ad.id}">
-                    <a href="/ads/delete" ><input type="submit" value="delete"></a>
-                </form>
                 <form method="get" action="/ads/update">
                     <input name="adId" id="adId" type="hidden" placeholder="${ad.id}" value="${ad.id}">
                     <a href="/ads/update" ><input type="submit" value="edit"></a>
+                </form>
+                <form method="get" action="/ads/delete">
+                    <input name="idAd" id="idAd" type="hidden" placeholder="${ad.id}" value="${ad.id}">
+                    <a href="/ads/delete" ><input type="submit" value="delete"></a>
                 </form>
             </div>
         </c:if>
