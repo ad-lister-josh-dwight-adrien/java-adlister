@@ -22,6 +22,10 @@
             </div>
         </c:if>
     </c:forEach>
+
+    <form action="/profile/configurations">
+        <input type="submit" value="Configure Profile" />
+    </form>
 </div>
 
 </body>

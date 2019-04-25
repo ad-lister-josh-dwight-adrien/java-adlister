@@ -21,7 +21,6 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-        System.out.println(username + email + password + passwordConfirmation);
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
@@ -53,7 +52,4 @@ public class RegisterServlet extends HttpServlet {
 
     }
 
-    public static void main(String[] args) {
-        System.out.println(DaoFactory.getUsersDao().findByUsername("Dwight").getUsername());
-    }
 }
