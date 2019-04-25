@@ -12,35 +12,34 @@
     <h1>Update Your Ad, ${sessionScope.user.username}</h1>
     <c:forEach var="ad" items="${ads}">
         <%--<c:if test="${ad.id} ">--%>
-        <form action="/ads/update" method="post">
-            <div class="form-group">
-                <input id="id" name="id" class="form-control" type="hidden" value="<c:out value="${ad.id}"/>">
-            </div>
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text" value="<c:out value="${ad.title}"/>">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input id="description" name="description" class="form-control" type="text" value="<c:out value="${ad.description}"/>">
+            <form action="/ads/update" method="post">
+                <div class="form-group">
+                    <input id="id" name="id" class="form-control" type="hidden" value="<c:out value="${ad.id}"/>">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" class="form-control" type="text" value="<c:out value="${ad.title}"/>">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input id="description" name="description" class="form-control" type="text" value="<c:out value="${ad.description}"/>">
                     <%--<textarea id="description" name="description" class="form-control" type="text" value="<c:out value="${ad.description}"/>"></textarea>--%>
-            </div>
-            <input type="submit" class="btn btn-block btn-primary">
-        </form>
+                </div>
+                <input type="submit" class="btn btn-block btn-primary">
+            </form>
         <%--</c:if>--%>
     </c:forEach>
 
     <%--<h1>Here's a List of Your Current Ads:</h1>--%>
     <%--<c:forEach var="ad" items="${ads}">--%>
-    <%--<c:if test="${ad.userId == sessionScope.user.id}">--%>
-    <%--<div class="col-md-6">--%>
-    <%--<c:out value="${ad.id}"></c:out>--%>
-    <%--<h2>${ad.title}</h2>--%>
-    <%--<p>${ad.description}</p>--%>
-    <%--</div>--%>
-    <%--</c:if>--%>
+        <%--<c:if test="${ad.userId == sessionScope.user.id}">--%>
+            <%--<div class="col-md-6">--%>
+                <%--<c:out value="${ad.id}"></c:out>--%>
+                <%--<h2>${ad.title}</h2>--%>
+                <%--<p>${ad.description}</p>--%>
+            <%--</div>--%>
+        <%--</c:if>--%>
     <%--</c:forEach>--%>
 </div>
 </body>
 </html>
-
