@@ -14,17 +14,22 @@ import java.io.IOException;
 @WebServlet(name = "controllers.UpdateAdServlet", urlPatterns = "/ads/update")
 public class UpdateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        request.getRequestDispatcher("/WEB-INF/ads/update.jsp")
-                .forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/update.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        Long id = Long.parseLong(request.getParameter("id"));
 
+        Ad ad = new Ad(
+                title,
+                description,
+                id
+        );
+        DaoFactory.getAdsDao().update(ad);
+        response.sendRedirect("/profile");
 
 
     }
