@@ -51,7 +51,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    public Long update(User user) {
+    public void update(User user) {
         String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -61,9 +61,6 @@ public class MySQLUsersDao implements Users {
             stmt.setString(3, user.getPassword());
             stmt.setLong(4, user.getId());
             stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error updating user profile", e);
         }

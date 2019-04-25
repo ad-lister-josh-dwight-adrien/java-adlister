@@ -26,6 +26,10 @@
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password">
         </div>
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input id="id" name="id" class="form-control" type="hidden" value="<c:out value="${sessionScope.user.id}"/>">
+        </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 

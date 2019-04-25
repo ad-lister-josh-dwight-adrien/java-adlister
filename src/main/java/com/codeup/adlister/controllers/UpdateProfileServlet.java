@@ -21,15 +21,18 @@ import java.io.IOException;
             String username = request.getParameter("username");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
+            Long id = Long.parseLong(request.getParameter("id"));
+
+
 
 
           //Need to get current user session username, email, password and replace.
 
 
 
-            User user = new User(username, email, password);
+            User user = new User(id, username, email, password);
             DaoFactory.getUsersDao().update(user);
-            response.sendRedirect("/login");
+            response.sendRedirect("/profile");
 
 
         }
