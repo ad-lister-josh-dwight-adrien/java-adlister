@@ -8,14 +8,11 @@
 </head>
 <body>
 <% request.setAttribute("adId", request.getParameter("adId"));%>
-<c:out value="${adId}"/>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Update Your Ad, ${sessionScope.user.username}</h1>
     <c:forEach var="ad" items="${ads}">
-        <c:out value="${ad.id}"/>
         <c:if test="${ad.id == adId}">
-            <c:out value="${ad.title}"/>
             <form action="/ads/update" method="post">
 
 
