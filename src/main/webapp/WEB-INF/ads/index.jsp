@@ -30,6 +30,7 @@
                 <h2><c:out value = "${ad.title}"/></h2>
                 <p><c:out value = "${ad.description}"/><p>
                 <form method="get" action="/adInfo">
+                    <input id="userId" name="userId" type="hidden" placeholder="${ad.userId}" value="${ad.userId}">
                     <input id="adId" name="adId" type="hidden" placeholder="${ad.id}" value="${ad.id}">
                     <a href="/adInfo"><input type="submit" value="view ad"></a>
                 </form>
@@ -39,6 +40,7 @@
                 <h2><c:out value = "${ad.title}"/></h2>
                 <p><c:out value = "${ad.description}"/><p>
                 <form method="get" action="/adInfo">
+                    <input id="userId" name="userId" type="hidden" placeholder="${ad.userId}" value="${ad.userId}">
                     <input id="adId" name="adId" type="hidden" placeholder="${ad.id}" value="${ad.id}">
                     <a href="/adInfo"><input type="submit" value="view ad"></a>
                 </form>
@@ -50,6 +52,7 @@
                 <h2><c:out value = "${ad.title}"/></h2>
                 <p><c:out value = "${ad.description}"/><p>
                 <form method="get" action="/adInfo">
+                    <input id="userId" name="userId" type="hidden" placeholder="${ad.userId}" value="${ad.userId}">
                     <input id="adId" name="adId" type="hidden" placeholder="${ad.id}" value="${ad.id}">
                     <a href="/adInfo"><input type="submit" value="view ad"></a>
                 </form>
