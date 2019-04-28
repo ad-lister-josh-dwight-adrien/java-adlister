@@ -11,9 +11,7 @@
         }
 
         /* container-1 */
-        div#container1 {
-            margin-left: 90px;
-        }
+        
 
 
         #container1 .card {

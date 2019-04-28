@@ -7,7 +7,6 @@
         #navbar {
             margin: 0;
             padding: 0;
-            max-width: 100%;
         }
 
         #navbar h1 {
@@ -47,6 +46,11 @@
             <c:if test="${url.toString() == 'http://localhost:8080/WEB-INF/login.jsp'}">
                 <div class="mx-auto">
                     <h1 style="margin-right: -14rem;;">Login now!!!</h1>
+                </div>
+            </c:if>
+            <c:if test="${url.toString() == 'http://localhost:8080/WEB-INF/profile.jsp'}">
+                <div class="mx-auto">
+                    <h1>Welcome, ${sessionScope.user.username}!</h1>
                 </div>
             </c:if>
             
