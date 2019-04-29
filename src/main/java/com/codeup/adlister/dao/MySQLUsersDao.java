@@ -4,6 +4,8 @@ import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -35,12 +37,12 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public User findById(int adId) {
-        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+    public List<User> getAllUser() {
+        PreparedStatement stmt = null;
         try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setInt(1, adId);
-            return extractUser(stmt.executeQuery());
+            stmt = connection.prepareStatement("SELECT * FROM users");
+            ResultSet rs = stmt.executeQuery();
+            return createUsersFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by username", e);
         }
@@ -88,6 +90,14 @@ public class MySQLUsersDao implements Users {
             rs.getString("email"),
             rs.getString("password")
         );
+    }
+
+    private List<User> createUsersFromResults(ResultSet rs) throws SQLException {
+        List<User> Users = new ArrayList<>();
+        while(rs.next()){
+            Users.add(extractUser(rs));
+        }
+        return Users;
     }
 
 }

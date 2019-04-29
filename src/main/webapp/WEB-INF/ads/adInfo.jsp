@@ -19,37 +19,37 @@
         <!-- navbar -->
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+
+<c:forEach var="user" items="${users}">
+    <c:out value="${user.username}"></c:out>
+</c:forEach>
+
+
+
         <!-- container-1 -->
         <div id="adCon1" class="container">
+            <c:forEach var="user" items="${users}">
             <div class="row">
                 <div class="col-md-3">
                     <div class="row">
                         <div class="mx-auto">
-                            <h3>username:</h3>
+                            <c:if test="${user.id == userId}">
+                                <h3>${user.username}</h3>
+                            </c:if>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="row">
                         <div class="mx-auto">
-                            <h2><c:out value="${userId}" /></h2>
+                            <c:if test="${user.id == userId}">
+                                <h3>${user.email}</h3>
+                            </c:if>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="mx-auto">
-                            <h3>email: </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="mx-auto">
-                            <h2><c:out value="" /></h2>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
 
             <br><br><br>

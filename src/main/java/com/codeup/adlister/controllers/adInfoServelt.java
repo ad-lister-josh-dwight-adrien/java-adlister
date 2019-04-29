@@ -15,7 +15,7 @@ public class adInfoServelt extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        request.setAttribute("userId",DaoFactory.getUsersDao().findById(1));
+        request.setAttribute("users",DaoFactory.getUsersDao().getAllUser());
         request.getRequestDispatcher("/WEB-INF/ads/adInfo.jsp").forward(request, response);
 
 
