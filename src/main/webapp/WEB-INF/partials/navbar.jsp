@@ -72,6 +72,11 @@
                 </c:if>
                 <c:if test="${sessionScope.user.username != null}">
                     <li class="nav-item">
+                        <a class="nav-link" href="/ads/create">create Ad</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.user.username != null}">
+                    <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 </c:if>
