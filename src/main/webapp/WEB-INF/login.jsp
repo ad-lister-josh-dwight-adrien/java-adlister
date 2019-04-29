@@ -1,3 +1,4 @@
+<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,23 +16,34 @@
 
     <%
         request.setAttribute("url", request.getParameter("url"));
-        String url = request.getParameter("url");
+        String username2 = request.getParameter("username2");
+        String password2 = request.getParameter("password2");
+
+        if(username2 == null){
+            username2 = username2;
+        }
+
+        if(password2 == null){
+            password2 = password2;
+        }
+
     %>
 
     <!-- login form -->
     <div id="loginContainer" class="container">
         <div class="row">
             <div class="col-md-4 offset-sm-4 text-center">
+                <C:out value="${username}"></C:out>
                 <h1>Adlister!!!!!!</h1>
                 <h1>Log In right now!!!!</h1>
                 <form action="/login" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input id="username" name="username" class="form-control" type="text">
+                        <input id="username" value="${username2}" name="username" class="form-control" type="text">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input id="password" name="password" class="form-control" type="password">
+                        <input id="password" value="${password2}" name="password" class="form-control" type="password">
                     </div>
                     <input type="hidden" id="url" name="url" class="btn btn-primary btn-block" value=${url}"">
                     <input type="submit" class="btn btn-primary btn-block" value="Log In">
