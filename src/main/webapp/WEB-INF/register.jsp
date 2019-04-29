@@ -16,6 +16,9 @@
 </head>
 <body>
 
+    <%@page import="com.codeup.adlister.dao.MySQLUsersDao"%>
+    
+
     <!-- navbar -->
     <jsp:include page="partials/navbar.jsp" />
 
