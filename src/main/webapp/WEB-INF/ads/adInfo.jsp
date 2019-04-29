@@ -20,9 +20,9 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 
-<c:forEach var="user" items="${users}">
-    <c:out value="${user.username}"></c:out>
-</c:forEach>
+<%--<c:forEach var="user" items="${users}">--%>
+    <%--<c:out value="${user.username}"></c:out>--%>
+<%--</c:forEach>--%>
 
 
 
