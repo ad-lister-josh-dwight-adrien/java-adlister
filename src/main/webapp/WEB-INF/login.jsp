@@ -13,6 +13,11 @@
     <!-- navbar -->
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+    <%
+        request.setAttribute("url", request.getParameter("url"));
+        String url = request.getParameter("url");
+    %>
+
     <!-- login form -->
     <div id="loginContainer" class="container">
         <div class="row">
@@ -28,6 +33,7 @@
                         <label for="password">Password</label>
                         <input id="password" name="password" class="form-control" type="password">
                     </div>
+                    <input type="hidden" id="url" name="url" class="btn btn-primary btn-block" value=${url}"">
                     <input type="submit" class="btn btn-primary btn-block" value="Log In">
                 </form>
             </div>

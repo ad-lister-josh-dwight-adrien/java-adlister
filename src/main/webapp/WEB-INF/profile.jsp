@@ -31,8 +31,8 @@
         </div>
     </div><br><br><br>
 
-    <div class="row">
-        <c:forEach var="ad" items="${ads}">
+    <c:forEach var="ad" items="${ads}">
+        <div class="row">
             <c:if test="${ad.userId == sessionScope.user.id}">
                 <div class="col-md-6">
                     <h2>${ad.title}</h2>
@@ -48,8 +48,8 @@
                     <hr>
                 </div>
             </c:if>
-        </c:forEach>
-    </div>
+        </div>
+    </c:forEach>
 </div>
 
 </body>
