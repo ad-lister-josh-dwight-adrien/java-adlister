@@ -27,7 +27,7 @@
         if(password2 == null){
             password2 = password2;
         }
-
+//        "<C:out value="${username2}"></C:out>"
     %>
 
     <!-- login form -->
