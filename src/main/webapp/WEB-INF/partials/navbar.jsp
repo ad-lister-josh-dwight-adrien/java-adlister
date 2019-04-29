@@ -57,7 +57,10 @@
             <ul class="navbar-nav ml-auto">
                 <c:if test="${sessionScope.user.username == null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
+                        <form method="get" action="/login">
+                            <input id="url" name="url" type="hidden" value="${url}">
+                            <a class="nav-link" href="/login"><input value="login" type="submit" /></a>
+                        </form>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.user.username == null}">
