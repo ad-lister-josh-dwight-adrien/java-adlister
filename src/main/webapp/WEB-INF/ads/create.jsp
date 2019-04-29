@@ -18,19 +18,6 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
-            <div>
-                <label for="category">Category</label><br>
-                <c:forEach var="category" items="${categories}">
-                    <c:out value="${category.id}"></c:out>
-                    <input id="category" name="category" value="${category.name}" type="checkbox"><c:out value="${category.name}"/><br><br>
-                </c:forEach>
-                <%--<c:forEach var="category" items="${categories}">--%>
-                    <%--<c:out value="${category.id}"></c:out>--%>
-                    <%--<input id="cat_id" name="cat_id" type="number" placeholder="${category.id}" value="${category.id}">--%>
-                    <%--<input id="" name="" type="text" value="${category.id}">--%>
-                    <%--<input id="category" name="category" value="true" type="checkbox"><c:out value="${category.name}"/><br><br>--%>
-                <%--</c:forEach>--%>
-            </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
