@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,7 +16,9 @@
 
     <%
         request.setAttribute("url", request.getParameter("url"));
-        String url = request.getParameter("url");
+        String invalidPassword =request.getParameter("invalidPassword");
+
+
     %>
 
     <!-- login form -->
@@ -25,6 +28,10 @@
                 <h1>Adlister!!!!!!</h1>
                 <h1>Log In right now!!!!</h1>
                 <form action="/login" method="POST">
+                    ${invalidPassword}
+                    <c:if test = "${invalidPassword}">
+                        <p>Incorrect username or password</p>
+                    </c:if>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input id="username" name="username" class="form-control" type="text">
