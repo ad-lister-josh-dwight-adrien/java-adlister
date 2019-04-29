@@ -18,6 +18,7 @@
         request.setAttribute("url", request.getParameter("url"));
         String username2 = request.getParameter("username2");
         String password2 = request.getParameter("password2");
+        String isNotLoggedIn = request.getParameter("isNotLoggedIn");
 
         if(username2 == null){
             username2 = username2;
@@ -33,9 +34,9 @@
     <div id="loginContainer" class="container">
         <div class="row">
             <div class="col-md-4 offset-sm-4 text-center">
-                <C:out value="${username}"></C:out>
                 <h1>Adlister!!!!!!</h1>
                 <h1>Log In right now!!!!</h1>
+                <h2 style="color: red;"><C:out value="${isNotLoggedIn}"></C:out></h2>
                 <form action="/login" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>

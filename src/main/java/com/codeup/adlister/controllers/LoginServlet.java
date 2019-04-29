@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             request.setAttribute("username2", username);
             request.setAttribute("password2", password);
+            request.setAttribute("isNotLoggedIn", "username or password was wrong LOSER!!!!!!");
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
 
