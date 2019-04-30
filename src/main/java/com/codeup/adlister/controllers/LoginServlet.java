@@ -50,6 +50,8 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("/");
             } else if (url.contains("/login")){
                 response.sendRedirect("/");
+            } else {
+                response.sendRedirect("/profile");
             }
         } else {
             response.sendRedirect("/login");

@@ -43,6 +43,10 @@
             width: 50%;
         }
 
+        #container2 p {
+            font-size: 2.2em;
+        }
+
     </style>
 
 </head>
