@@ -8,7 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @WebServlet (urlPatterns = "/ads/category")
 public class ChooseCategoryServlet extends HttpServlet {
@@ -23,12 +26,17 @@ public class ChooseCategoryServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        Cat_Ad cat_ad = new Cat_Ad(
-                Long.parseLong(request.getParameter("cat_id")),
-                2
-        );
-        String test  = request.getParameter("category");
-        System.out.println(test);
-        DaoFactory.getCat_AdsDao().insert(cat_ad);
+        String[] categories;
+        categories = request.getParameterValues("category");
+//        System.out.println(Arrays.toString(categories));
+        for (String category : categories) {
+            System.out.println("category = " + category);
+            Cat_Ad cat_ad = new Cat_Ad(
+                    Long.parseLong(category),
+                    2
+            );
+            DaoFactory.getCat_AdsDao().insert(cat_ad);
+        }
+
     }
 }
