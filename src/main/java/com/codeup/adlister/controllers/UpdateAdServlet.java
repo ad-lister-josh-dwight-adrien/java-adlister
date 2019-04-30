@@ -14,19 +14,31 @@ import java.io.IOException;
 @WebServlet(name = "controllers.UpdateAdServlet", urlPatterns = "/ads/update")
 public class UpdateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
         request.getRequestDispatcher("/WEB-INF/ads/update.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
         String description = request.getParameter("description");
-        Long id = Long.parseLong(request.getParameter("id"));
+        Long adId = Long.parseLong(request.getParameter("adId"));
+
+        if (title.isEmpty() || description.isEmpty()) {
+            request.setAttribute("ads", DaoFactory.getAdsDao().all());
+            request.setAttribute("title", title);
+            request.setAttribute("description", description);
+            request.setAttribute("adId",adId);
+            request.setAttribute("updateAdFailure", "Inputs are empty, FIX that LOSER!!!!!!");
+            request.getRequestDispatcher("/WEB-INF/ads/update.jsp").forward(request, response);
+            response.sendRedirect("/ads/update");
+            return;
+        }
 
         Ad ad = new Ad(
                 title,
                 description,
-                id
+                adId
         );
         DaoFactory.getAdsDao().update(ad);
         response.sendRedirect("/profile");

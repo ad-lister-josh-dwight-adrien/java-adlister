@@ -20,14 +20,6 @@
         String password2 = request.getParameter("password2");
         String isNotLoggedIn = request.getParameter("isNotLoggedIn");
 
-        if(username2 == null){
-            username2 = username2;
-        }
-
-        if(password2 == null){
-            password2 = password2;
-        }
-//        "<C:out value="${username2}"></C:out>"
     %>
 
     <!-- login form -->
@@ -40,11 +32,11 @@
                 <form action="/login" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input id="username" value="${username2}" name="username" class="form-control" type="text">
+                        <input id="username" value="<C:out value="${username2}"></C:out>" name="username" class="form-control" type="text">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input id="password" value="${password2}" name="password" class="form-control" type="password">
+                        <input id="password" value="<C:out value="${password2}"></C:out>" name="password" class="form-control" type="password">
                     </div>
                     <input type="hidden" id="url" name="url" class="btn btn-primary btn-block" value=${url}"">
                     <input type="submit" class="btn btn-primary btn-block" value="Log In">
