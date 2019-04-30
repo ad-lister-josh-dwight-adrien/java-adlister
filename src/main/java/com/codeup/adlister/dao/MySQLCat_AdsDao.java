@@ -30,9 +30,7 @@ public class MySQLCat_AdsDao implements Cat_Ads {
             stmt.setLong(1, cat_ad.getCat_id());
             stmt.setLong(2, cat_ad.getAd_id());
             stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+            return 0L;
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new cat_ad", e);
         }
