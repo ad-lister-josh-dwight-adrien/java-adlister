@@ -25,7 +25,7 @@ public class ChooseCategoryServlet extends HttpServlet {
                 .forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String[] categories;
         categories = request.getParameterValues("category");
 //        System.out.println(Arrays.toString(categories));
@@ -37,6 +37,7 @@ public class ChooseCategoryServlet extends HttpServlet {
             );
             DaoFactory.getCat_AdsDao().insert(cat_ad);
         }
+        response.sendRedirect("/profile");
 
     }
 }
