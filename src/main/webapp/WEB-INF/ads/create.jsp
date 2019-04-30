@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,14 +22,23 @@
 </head>
 <body>
 
-    <!-- navbar -->
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<%
 
-    <!-- Create ad Form -->
-    <div id="creatCon" class="container">
-        <div class="row">
-            <div class="mx-auto">
-                <h1>Create a new Ad</h1>
+    String title = request.getParameter("title");
+    String description = request.getParameter("description");
+    String createAdFailure = request.getParameter("createAdFailure");
+
+
+%>
+
+    <div class="container">
+        <h1>Create a new Ad</h1>
+        <form action="/ads/create" method="post">
+            <h2 style="color: red;"><C:out value="${createAdFailure}"></C:out></h2>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" name="title" class="form-control" type="text">
+
             </div>
         </div>
         <div class="row">

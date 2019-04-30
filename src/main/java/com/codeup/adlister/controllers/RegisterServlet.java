@@ -16,7 +16,7 @@ public class RegisterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -28,7 +28,13 @@ public class RegisterServlet extends HttpServlet {
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
 
-        if (inputHasErrors) {
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+            request.setAttribute("confirm_password", passwordConfirmation);
+            request.setAttribute("registrationFailure", "Inputs are empty, FIX that LOSER!!!!!!");
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             response.sendRedirect("/register");
             return;
         }
@@ -39,9 +45,28 @@ public class RegisterServlet extends HttpServlet {
             usernameExists = true;
         }
         if (usernameExists) {
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+            request.setAttribute("confirm_password", passwordConfirmation);
+            request.setAttribute("registrationFailure", "Account already exists, LOSER!");
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             response.sendRedirect("/register");
             return;
         }
+
+        if(! password.equals(passwordConfirmation)){
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+            request.setAttribute("confirm_password", passwordConfirmation);
+            request.setAttribute("registrationFailure", "Passwords do not match, try again LOSER!!!!!!");
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            response.sendRedirect("/register");
+            return;
+        }
+
+
 
         // create and save a new user
 
