@@ -17,12 +17,22 @@ import java.io.IOException;
             request.getRequestDispatcher("/WEB-INF/profile-config.jsp").forward(request, response);
         }
 
-        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String username = request.getParameter("username");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             Long id = Long.parseLong(request.getParameter("id"));
 
+
+            if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                request.setAttribute("username", username);
+                request.setAttribute("email", email);
+                request.setAttribute("password", password);
+                request.setAttribute("profileConfigFailure", "Inputs are empty, FIX that LOSER!!!!!!");
+                request.getRequestDispatcher("/WEB-INF/profile-config.jsp").forward(request, response);
+                response.sendRedirect("/profile/configurations");
+                return;
+            }
 
 
 

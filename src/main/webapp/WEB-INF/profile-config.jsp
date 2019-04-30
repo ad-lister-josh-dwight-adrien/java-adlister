@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,11 +10,24 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
+<%
+
+    String username = request.getParameter("username");
+    System.out.println(username);
+    String email = request.getParameter("email");
+    String password = request.getParameter("password");
+    String profileConfigFailure = request.getParameter("profileConfigFailure");
+
+
+%>
+
 <div class="container">
     <h1>Profile Configurations</h1>
     <h3>Please update your profile as you see fit</h3>
 
     <form action="/profile/configurations" method="post">
+        <h2 style="color: red;"><C:out value="${profileConfigFailure}"></C:out></h2>
+
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text" value="<c:out value ="${sessionScope.user.username}"/>">
