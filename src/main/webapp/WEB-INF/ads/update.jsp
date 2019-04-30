@@ -1,5 +1,4 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,22 +17,18 @@
     String description = request.getParameter("description");
     String updateAdFailure = request.getParameter("updateAdFailure");
     Long adId = Long.parseLong(request.getParameter("adId"));
-    System.out.println(request.getParameter("adId"));
-
-
-
 
 %>
 
 <div class="container">
     <h1>Update Your Ad, ${sessionScope.user.username}</h1>
 
-    adId = ${adId}
+    <%--adId = ${adId}--%>
     <c:forEach var="ad" items="${ads}">
-        ad.id = ${ad.id}
+        <%--ad.id = ${ad.id}--%>
         <c:if test="${ad.id == adId}">
             <form action="/ads/update" method="post">
-                <h2 style="color: red;"><C:out value="${updateAdFailure}"></C:out></h2>
+                <h2 style="color: red;"><c:out value="${updateAdFailure}"></c:out></h2>
 
                 <div class="form-group">
                     <input id="userId" name="userId" class="form-control" type="hidden" value="<c:out value="${ad.userId}"/>">
