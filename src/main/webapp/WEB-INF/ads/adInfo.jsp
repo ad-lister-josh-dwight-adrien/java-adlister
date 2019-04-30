@@ -20,12 +20,6 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 
-<%--<c:forEach var="user" items="${users}">--%>
-    <%--<c:out value="${user.username}"></c:out>--%>
-<%--</c:forEach>--%>
-
-
-
         <!-- container-1 -->
         <div id="adCon1" class="container">
             <c:forEach var="user" items="${users}">

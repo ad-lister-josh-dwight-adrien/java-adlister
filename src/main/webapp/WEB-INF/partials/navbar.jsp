@@ -13,6 +13,14 @@
             margin-left: 15rem;
         }
 
+        #navbar input {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            margin-top: 12.50px;
+            background-color: transparent;
+        }
+
     </style>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
