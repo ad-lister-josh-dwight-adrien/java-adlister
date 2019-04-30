@@ -1,5 +1,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,9 +16,10 @@
     String title = request.getParameter("title");
     String description = request.getParameter("description");
     String createAdFailure = request.getParameter("createAdFailure");
-
-
 %>
+
+<!-- navbar -->
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
         <h1>Create a new Ad</h1>
