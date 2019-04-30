@@ -22,7 +22,23 @@ public class CreateAdServlet extends HttpServlet {
             .forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+
+        if(title.isEmpty() || description.isEmpty()){
+            request.setAttribute("title", title);
+            request.setAttribute("description", description);
+            request.setAttribute("createAdFailure", "Inputs are empty, FIX that LOSER!!!!!!");
+            request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+                    .forward(request, response);
+
+            response.sendRedirect("/ads/create");
+            return;
+        }
+
+
         User user = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
             user.getId(),
