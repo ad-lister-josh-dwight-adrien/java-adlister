@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Cat_Ad;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ public class CreateAdServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+        request.setAttribute("categories", DaoFactory.getCategoriesDao().all());
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
             .forward(request, response);
     }
@@ -30,6 +32,6 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("description")
         );
         DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/ads/category");
     }
 }

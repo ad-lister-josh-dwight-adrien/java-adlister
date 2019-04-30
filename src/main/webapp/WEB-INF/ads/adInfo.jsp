@@ -19,7 +19,7 @@
         <!-- navbar -->
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-        
+
         <!-- container-1 -->
         <div id="adCon1" class="container">
             <c:forEach var="user" items="${users}">
