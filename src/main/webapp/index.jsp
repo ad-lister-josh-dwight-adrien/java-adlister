@@ -19,55 +19,54 @@
     <div id="container1" class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>How to create a ad!</h2>
+                <h2>Steps to creating an ad!</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
                 <div class="card mb-3" style="max-width: 20rem;">
-                    <div class="card-header">1: register</div>
+                    <div class="card-header">1: Register</div>
                     <div class="card-body">
-                        <h4 class="card-title">registering is easy!!</h4>
+                        <h4 class="card-title">Registering is easy!!</h4>
                         <p class="card-text">
-                            just give us your social security and credit card numbers! dont worry
-                            our site is the most more secure of all possible sites.
+                            Just give us your social security and credit card numbers! Don't worry,
+                            our site is the most secure of them all!
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="card mb-3" style="max-width: 20rem;">
-                    <div class="card-header">2: login</div>
+                    <div class="card-header">2: Login</div>
                     <div class="card-body">
-                        <h4 class="card-title">Login and Start advertising yourself to strangers</h4>
+                        <h4 class="card-title">Login and Start advertising your products/services to others</h4>
                         <p class="card-text">
-                            once logged in, you'll probably already be in massive debt without you even knowing!
-                            so better start advertising yourself in hopes to make money in some "Legal" way.
+                            Once logged in, you'll probably already be in massive debt without you even knowing!
+                            So better start advertising your stuff in hopes to make money in some "Legal" way.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="card mb-3" style="max-width: 20rem;">
-                    <div class="card-header">3: create a ad</div>
+                    <div class="card-header">3: Create an ad</div>
                     <div class="card-body">
-                        <h4 class="card-title">display a ad to random Strangers!!</h4>
+                        <h4 class="card-title">Display an ad to random Strangers!!</h4>
                         <p class="card-text">
-                            that's right, all kinds of random strangers on this site looking for random things!!!
-                            so start you random adventure by creating as many ads a possible until our sever just shuts down.
+                            All kinds of random strangers on this site are looking for random things!!!
+                            So start you random adventure by creating as many ads a possible until our sever just shuts down.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="card mb-3" style="max-width: 20rem;">
-                    <div class="card-header">4 search ads</div>
+                    <div class="card-header">4 Search Ads</div>
                     <div class="card-body">
-                        <h4 class="card-title">randome poeple you dont know post ads too!</h4>
+                        <h4 class="card-title">Random People you dont know post ads here too!</h4>
                         <p class="card-text">
-                            whatever you are looking for, its more then likely to be obtainable on the interwebs so start
-                            looking at what these randos are posting.
+                            Check what the others are posting!
                         </p>
                     </div>
                 </div>
@@ -98,29 +97,26 @@
         </div>
         <div class="row">
             <div class="col-sm-6 links">
-                <a href="#para1btn" id="para1btn" class="active"><h2>ads</h2></a><br>
-                <a href="#para2btn" id="para2btn"><h2>login</h2></a><br>
-                <a href="#para3btn" id="para3btn"><h2>registering</h2></a><br>
-                <a href="#para4btn" id="para4btn"><h2>personal profile</h2></a>
+                <a href="#para1btn" id="para1btn" class="active"><h2>Ads</h2></a><br>
+                <a href="#para2btn" id="para2btn"><h2>Login</h2></a><br>
+                <a href="#para3btn" id="para3btn"><h2>Registering</h2></a><br>
+                <a href="#para4btn" id="para4btn"><h2>Personal Profile</h2></a>
             </div>
             <div class="col-sm-6 middleBorder">
                 <p id="para1" class="">
-                    I dont know if people are even going to read this. your probably just sitting class bored
-                    and have nothing better to do with your time but read what im putting here. loser
+                    I dont know if people are even going to read this. You're probably just sitting class bored
+                    and have nothing better to do with your time but read on.
                 </p>
                 <p id="para2" class="hidden" >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci delectus esse
-                    facilis, necessitatibus nesciunt possimus praesentium tenetur veritatis voluptatem?
+                    Feel free to login after registering for an account. The link to login can be found in the
+                    top right-hand corner of the page.
                 </p>
                 <p id="para3" class="hidden" >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto consectetur
-                    facilis illo ipsam, itaque laborum maiores minima nam nemo pariatur provident repellat
-                    reprehenderit repudiandae saepe sapiente, unde ut vitae.
+                    Registering is pretty self-explanatory The link to register can be found in the top right
+                    hand corner of the page. You must register before posting anything.
                 </p>
                 <p id="para4" class="hidden" >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum maiores mollitia voluptates.
-                    Asperiores assumenda dolorum, maxime nisi pariatur quam sed vel. Aliquam, assumenda consequatur
-                    consequuntur earum iste laboriosam laborum magnam nobis obcaecati quaerat quasi quia.
+                    Your personal profile will include services/products that you have posted on our site.
                 </p>
             </div>
         </div>
